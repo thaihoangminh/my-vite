@@ -1,16 +1,16 @@
 export type UserLogin = {
-  username: string;
-  password: string;
+  username: string
+  password: string
 }
 
 export type User = {
-  username: string;
-  name: string;
+  username: string
+  name: string
 }
 
 export type AuthProps = {
-  isAuthenticated: boolean;
-  user: User;
-  logout: () => void;
-  login: () => void;
+  isAuthenticated: boolean
+  user: User
+  logout: () => void
+  login: () => void
 }

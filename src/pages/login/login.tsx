@@ -12,7 +12,6 @@ export const Login = () => {
   })
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('submit', data);
   }
   return (
     <form onSubmit={handleSubmit}>

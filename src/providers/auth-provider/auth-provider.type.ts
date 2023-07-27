@@ -1,3 +1,3 @@
 export type AuthProviderProps = {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
