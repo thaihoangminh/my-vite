@@ -7,6 +7,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
   ],
@@ -36,6 +37,14 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
     'no-console': 'warn',
+    'react/react-in-jsx-scope': 'off',
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: true,
+      },
+    ],
   },
   settings: {
     'import/parsers': {
