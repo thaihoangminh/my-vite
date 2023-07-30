@@ -5,11 +5,13 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:import/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,7 +20,7 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh', 'simple-import-sort', 'import'],
+  plugins: ['react-refresh', 'simple-import-sort', 'import', 'prettier'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
@@ -46,19 +48,12 @@ module.exports = {
         html: true,
       },
     ],
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },
   settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
+    react: { version: 'detect' },
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      alias: {
-        map: [['@', './src']],
-        extensions: ['.ts', '.tsx', '.json'],
-      },
+      typescript: {},
     },
   },
   overrides: [
