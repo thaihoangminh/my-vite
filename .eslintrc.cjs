@@ -36,6 +36,7 @@ module.exports = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
+    'import/no-named-as-default': 'off',
     'no-console': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': [
