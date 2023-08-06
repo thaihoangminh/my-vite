@@ -1,1 +1,1 @@
-export * from './posts.tsx'
+export * from './posts'

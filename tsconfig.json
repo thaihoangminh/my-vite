@@ -7,8 +7,9 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -24,6 +25,6 @@
       "@/*": ["./src/*"]
     },
   },
-  "include": ["src"],
+  "include": ["src", "tailwind.config.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

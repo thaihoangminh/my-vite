@@ -15,21 +15,21 @@ export const Login = () => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username</label>
+      <label htmlFor='username'>Username</label>
       <input
-        type="text"
-        name="username"
-        id="username"
+        type='text'
+        name='username'
+        id='username'
         onChange={(e) => setData({ ...data, username: e.target.value })}
       />
-      <label htmlFor="password">Password</label>
+      <label htmlFor='password'>Password</label>
       <input
-        type="password"
-        name="password"
-        id="password"
+        type='password'
+        name='password'
+        id='password'
         onChange={(e) => setData({ ...data, password: e.target.value })}
       />
-      <button type="submit">Login</button>
+      <button type='submit'>Login</button>
     </form>
   )
 }

@@ -3,6 +3,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
+  ignorePatterns: ['node_modules/*', 'postcss.config.js'],
   extends: [
     'eslint:recommended',
     'plugin:import/errors',
@@ -33,12 +34,37 @@ module.exports = {
         ignore: ['.svg'],
       },
     ],
+    'react/prop-types': 'off',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['@/features/*/*'],
+            message:
+              'Please import from the root @/features folder (e.g. @/features/ui instead of @/features/ui/button).',
+          },
+        ],
+      },
+    ],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     'import/first': 'error',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-named-as-default': 'off',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
-    'import/no-named-as-default': 'off',
     'no-console': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/self-closing-comp': [
@@ -48,6 +74,20 @@ module.exports = {
         html: true,
       },
     ],
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/explicit-module-boundary-types': ['off'],
+    '@typescript-eslint/no-empty-function': ['off'],
+    '@typescript-eslint/no-explicit-any': ['off'],
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: {
+          attributes: false,
+        },
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': ['error'],
+
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },
   settings: {
