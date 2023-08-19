@@ -1,8 +1,4 @@
-import {
-  DefaultOptions,
-  QueryClient,
-  UseMutationOptions,
-} from '@tanstack/react-query'
+import { DefaultOptions, QueryClient, UseMutationOptions } from '@tanstack/react-query'
 import { AxiosError } from 'axios'
 import { AsyncReturnType, Promisable } from 'type-fest'
 
@@ -18,9 +14,7 @@ const queryConfig: DefaultOptions = {
 
 export const queryClient = new QueryClient({ defaultOptions: queryConfig })
 
-export type ExtractFnReturnType<FnType extends Fn> = Promisable<
-  ReturnType<FnType>
->
+export type ExtractFnReturnType<FnType extends Fn> = Promisable<ReturnType<FnType>>
 
 export type MutationConfig<MutationFnType extends Fn> = UseMutationOptions<
   ExtractFnReturnType<AsyncReturnType<MutationFnType>>,

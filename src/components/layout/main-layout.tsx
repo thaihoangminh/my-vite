@@ -188,10 +188,7 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }: MobileSidebarProps) => {
                   onClick={() => setSidebarOpen(false)}
                 >
                   <span className='sr-only'>Close sidebar</span>
-                  <XMarkIcon
-                    className='h-6 w-6 text-white'
-                    aria-hidden='true'
-                  />
+                  <XMarkIcon className='h-6 w-6 text-white' aria-hidden='true' />
                 </button>
               </div>
             </Transition.Child>
@@ -248,10 +245,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <div className='flex h-screen overflow-hidden bg-gray-100'>
-      <MobileSidebar
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
-      />
+      <MobileSidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Sidebar />
       <div className='flex w-0 flex-1 flex-col overflow-hidden'>
         <div className='relative z-10 flex h-16 flex-shrink-0 bg-white shadow'>
@@ -268,9 +262,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             </div>
           </div>
         </div>
-        <main className='relative flex-1 overflow-y-auto focus:outline-none'>
-          {children}
-        </main>
+        <main className='relative flex-1 overflow-y-auto focus:outline-none'>{children}</main>
       </div>
     </div>
   )

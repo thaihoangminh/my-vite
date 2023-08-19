@@ -131,10 +131,7 @@ export const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
       </Form>
       <div className='mt-2 flex items-center justify-end'>
         <div className='text-sm'>
-          <Link
-            to='../login'
-            className='font-medium text-blue-600 hover:text-blue-500'
-          >
+          <Link to='../login' className='font-medium text-blue-600 hover:text-blue-500'>
             Log In
           </Link>
         </div>

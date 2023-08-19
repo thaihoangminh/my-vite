@@ -25,13 +25,7 @@ export const Landing = () => {
           <h2 className='text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
             <span className='block'>React</span>
           </h2>
-          <img
-            src={logo}
-            alt='react'
-            width={200}
-            height={200}
-            className='mx-auto'
-          />
+          <img src={logo} alt='react' width={200} height={200} className='mx-auto' />
           <p>Showcasing Best Practices For Building React Applications</p>
           <div className='mt-8 flex justify-center'>
             <div className='inline-flex rounded-md shadow'>

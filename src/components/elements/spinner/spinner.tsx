@@ -18,20 +18,11 @@ export type SpinnerProps = {
   className?: string
 }
 
-export const Spinner = ({
-  size = 'md',
-  variant = 'primary',
-  className = '',
-}: SpinnerProps) => {
+export const Spinner = ({ size = 'md', variant = 'primary', className = '' }: SpinnerProps) => {
   return (
     <>
       <svg
-        className={clsx(
-          'animate-spin',
-          sizes[size],
-          variants[variant],
-          className
-        )}
+        className={clsx('animate-spin', sizes[size], variants[variant], className)}
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
         viewBox='0 0 24 24'

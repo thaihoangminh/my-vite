@@ -12,10 +12,7 @@ export type TableProps<Entry> = {
   columns: TableColumn<Entry>[]
 }
 
-export const Table = <Entry extends { id: string }>({
-  data,
-  columns,
-}: TableProps<Entry>) => {
+export const Table = <Entry extends { id: string }>({ data, columns }: TableProps<Entry>) => {
   if (!data?.length) {
     return (
       <div className='flex h-80 flex-col items-center justify-center bg-white text-gray-500'>
@@ -45,10 +42,7 @@ export const Table = <Entry extends { id: string }>({
               </thead>
               <tbody>
                 {data.map((entry, entryIndex) => (
-                  <tr
-                    key={entry?.id || entryIndex}
-                    className='odd:bg-white even:bg-gray-100'
-                  >
+                  <tr key={entry?.id || entryIndex} className='odd:bg-white even:bg-gray-100'>
                     {columns.map(({ Cell, field, title }, columnIndex) => (
                       <td
                         key={`${title}${columnIndex}`}

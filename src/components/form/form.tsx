@@ -1,11 +1,5 @@
 import { ReactNode } from 'react'
-import {
-  FieldValues,
-  SubmitHandler,
-  useForm,
-  UseFormProps,
-  UseFormReturn,
-} from 'react-hook-form'
+import { FieldValues, SubmitHandler, useForm, UseFormProps, UseFormReturn } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
 import { ZodType, ZodTypeDef } from 'zod'
@@ -21,11 +15,7 @@ type FormProps<TFormValues extends FieldValues, Schema> = {
 
 export const Form = <
   TFormValues extends Record<string, unknown> = Record<string, unknown>,
-  Schema extends ZodType<unknown, ZodTypeDef, unknown> = ZodType<
-    unknown,
-    ZodTypeDef,
-    unknown
-  >,
+  Schema extends ZodType<unknown, ZodTypeDef, unknown> = ZodType<unknown, ZodTypeDef, unknown>,
 >({
   onSubmit,
   children,
