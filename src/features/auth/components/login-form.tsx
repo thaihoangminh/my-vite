@@ -43,11 +43,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
               registration={register('password')}
             />
             <div>
-              <Button
-                isLoading={login.isLoading}
-                type='submit'
-                className='w-full'
-              >
+              <Button isLoading={login.isLoading} type='submit' className='w-full'>
                 Log in
               </Button>
             </div>
@@ -56,10 +52,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
       </Form>
       <div className='mt-2 flex items-center justify-end'>
         <div className='text-sm'>
-          <Link
-            to='../register'
-            className='font-medium text-blue-600 hover:text-blue-500'
-          >
+          <Link to='../register' className='font-medium text-blue-600 hover:text-blue-500'>
             Register
           </Link>
         </div>

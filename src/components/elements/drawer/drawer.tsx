@@ -70,9 +70,7 @@ export const Drawer = ({
                         </div>
                       </div>
                     </div>
-                    <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                      {children}
-                    </div>
+                    <div className='relative mt-6 flex-1 px-4 sm:px-6'>{children}</div>
                   </div>
                   <div className='flex flex-shrink-0 justify-end space-x-2 px-4 py-4'>
                     {renderFooter()}

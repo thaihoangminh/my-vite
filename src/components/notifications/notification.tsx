@@ -9,21 +9,9 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
 const icons = {
-  info: (
-    <InformationCircleIcon
-      className='h-6 w-6 text-blue-500'
-      aria-hidden='true'
-    />
-  ),
-  success: (
-    <CheckCircleIcon className='h-6 w-6 text-green-500' aria-hidden='true' />
-  ),
-  warning: (
-    <ExclamationCircleIcon
-      className='h-6 w-6 text-yellow-500'
-      aria-hidden='true'
-    />
-  ),
+  info: <InformationCircleIcon className='h-6 w-6 text-blue-500' aria-hidden='true' />,
+  success: <CheckCircleIcon className='h-6 w-6 text-green-500' aria-hidden='true' />,
+  warning: <ExclamationCircleIcon className='h-6 w-6 text-yellow-500' aria-hidden='true' />,
   error: <XCircleIcon className='h-6 w-6 text-red-500' aria-hidden='true' />,
 }
 

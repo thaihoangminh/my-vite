@@ -14,12 +14,7 @@ export const DialogTitle = UIDialog.Title
 
 export const DialogDescription = UIDialog.Description
 
-export const Dialog = ({
-  isOpen,
-  onClose,
-  children,
-  initialFocus,
-}: DialogProps) => {
+export const Dialog = ({ isOpen, onClose, children, initialFocus }: DialogProps) => {
   return (
     <>
       <Transition.Root show={isOpen} as={Fragment}>
@@ -45,10 +40,7 @@ export const Dialog = ({
             </Transition.Child>
 
             {/* This element is to trick the browser into centering the modal contents. */}
-            <span
-              className='hidden sm:inline-block sm:h-screen sm:align-middle'
-              aria-hidden='true'
-            >
+            <span className='hidden sm:inline-block sm:h-screen sm:align-middle' aria-hidden='true'>
               &#8203;
             </span>
             <Transition.Child
