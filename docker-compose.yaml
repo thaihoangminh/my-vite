@@ -1,0 +1,9 @@
+services:
+  my-vite:
+    build:
+      context: .
+    container_name: my-vite
+    image: my-vite
+    command: sh -c "npm run preview"
+    ports:
+      - 127.0.0.1:5173:5173
