@@ -2,7 +2,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  ignorePatterns: ['node_modules/*', 'postcss.config.js', 'theme.js'],
+  ignorePatterns: ['node_modules/*', 'postcss.config.js'],
   extends: [
     'eslint:recommended',
     'plugin:import/errors',
