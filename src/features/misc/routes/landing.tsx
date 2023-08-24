@@ -20,7 +20,7 @@ export const Landing = () => {
   return (
     <>
       <Head description='Welcome to react' />
-      <div className='flex h-[100vh] w-full items-center'>
+      <div className='flex h-[100vh] w-full items-center bg-white'>
         <div className='mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8 lg:py-16'>
           <h2 className='text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
             <span className='block'>React</span>
