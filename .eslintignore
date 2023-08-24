@@ -13,3 +13,5 @@ thumb
 sketch
 
 !.storybook
+
+.eslintrc.cjs
