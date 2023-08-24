@@ -1,17 +1,8 @@
 /* eslint-env node */
-
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  ignorePatterns: [
-    '!.storybook',
-    '.storybook/main.ts',
-    '.storybook/preview.tsx',
-    '.storybook/withTailwindTheme.decorator.tsx',
-    'node_modules/*',
-    'postcss.config.js',
-    'theme.js',
-  ],
+  ignorePatterns: ['node_modules/*', 'postcss.config.js', 'theme.js'],
   extends: [
     'eslint:recommended',
     'plugin:import/errors',

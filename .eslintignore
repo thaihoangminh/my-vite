@@ -12,4 +12,9 @@ psd
 thumb
 sketch
 
-!.storybook
+.storybook
+
+.eslintrc.cjs
+ios/
+android/
+*.config.js
