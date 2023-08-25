@@ -20,11 +20,9 @@ export const Landing = () => {
   return (
     <>
       <Head description='Welcome to react' />
-      <div className='flex h-[100vh] w-full items-center bg-white'>
-        <div className='mx-auto max-w-7xl px-4 py-12 text-center sm:px-6 lg:px-8 lg:py-16'>
-          <h2 className='text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl'>
-            <span className='block'>React</span>
-          </h2>
+      <div className='flex h-[100vh] w-full items-center'>
+        <div className='mx-auto max-w-7xl text-center'>
+          <h2 className='my-2 text-3xl font-extrabold tracking-tight sm:text-4xl'>React</h2>
           <img src={logo} alt='react' width={200} height={200} className='mx-auto' />
           <p>Showcasing Best Practices For Building React Applications</p>
           <div className='mt-8 flex justify-center'>
