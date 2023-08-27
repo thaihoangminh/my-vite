@@ -45,7 +45,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             <AuthLoader
               renderLoading={() => (
                 <div className='flex h-screen w-screen items-center justify-center'>
-                  <Spinner size='xl' />
+                  <Spinner />
                 </div>
               )}
             >

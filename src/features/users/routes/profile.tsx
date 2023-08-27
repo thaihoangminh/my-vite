@@ -14,9 +14,9 @@ const Entry = ({ label, value }: EntryProps) => (
 )
 
 export const Profile = () => {
-  const { data } = useUser()
+  const { user } = useUser()
 
-  if (!data) return null
+  if (!user) return null
 
   return (
     <ContentLayout title='Profile'>
@@ -30,11 +30,11 @@ export const Profile = () => {
         </div>
         <div className='border-t border-gray-200 px-4 py-5 sm:p-0'>
           <dl className='sm:divide-y sm:divide-gray-200'>
-            <Entry label='First Name' value={data.firstName} />
-            <Entry label='Last Name' value={data.lastName} />
-            <Entry label='Email Address' value={data.email} />
-            <Entry label='Role' value={data.role} />
-            <Entry label='Bio' value={data.bio} />
+            <Entry label='First Name' value={user.firstName} />
+            <Entry label='Last Name' value={user.lastName} />
+            <Entry label='Email Address' value={user.email} />
+            <Entry label='Role' value={user.role} />
+            <Entry label='Bio' value={user.bio} />
           </dl>
         </div>
       </div>

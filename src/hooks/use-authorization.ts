@@ -4,22 +4,24 @@ import { useUser } from '@/lib/auth'
 import { RoleTypes } from '@/lib/authorization'
 
 export const useAuthorization = () => {
-  const { data } = useUser()
+  const { user } = useUser()
 
-  if (!data) {
+  if (!user) {
     throw Error('User does not exist!')
   }
+
+  const { role } = user
 
   const checkAccess = useCallback(
     ({ allowedRoles }: { allowedRoles: RoleTypes[] }) => {
       if (allowedRoles && allowedRoles.length > 0) {
-        return allowedRoles?.includes(data.role)
+        return allowedRoles?.includes(role)
       }
 
       return true
     },
-    [data.role]
+    [role]
   )
 
-  return { checkAccess, role: data.role }
+  return { checkAccess, role }
 }

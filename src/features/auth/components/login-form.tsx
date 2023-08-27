@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { Button } from '@/components/elements'
 import { Form, InputField } from '@/components/form'
 import { useLogin } from '@/lib/auth'
+import { routes } from '@/routes/routes'
 
 const schema = z.object({
   identifier: z.string().min(1, 'Required'),
@@ -52,7 +53,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
       </Form>
       <div className='mt-2 flex items-center justify-end'>
         <div className='text-sm'>
-          <Link to='../register' className='font-medium text-blue-600 hover:text-blue-500'>
+          <Link to={routes.register} className='font-medium text-blue-600 hover:text-blue-500'>
             Register
           </Link>
         </div>

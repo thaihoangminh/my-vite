@@ -12,7 +12,7 @@ export const UsersList = () => {
   if (isLoading) {
     return (
       <div className='flex h-48 w-full items-center justify-center'>
-        <Spinner size='lg' />
+        <Spinner />
       </div>
     )
   }
