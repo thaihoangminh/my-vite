@@ -28,27 +28,21 @@ type AppProviderProps = {
   children: ReactNode
 }
 
+const Loading = () => (
+  <div className='flex h-screen w-screen items-center justify-center'>
+    <Spinner />
+  </div>
+)
+
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
-    <Suspense
-      fallback={
-        <div className='flex h-screen w-screen items-center justify-center'>
-          <Spinner />
-        </div>
-      }
-    >
+    <Suspense fallback={<Loading />}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
           <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools />
             <Notifications />
-            <AuthLoader
-              renderLoading={() => (
-                <div className='flex h-screen w-screen items-center justify-center'>
-                  <Spinner />
-                </div>
-              )}
-            >
+            <AuthLoader renderLoading={() => <Loading />}>
               <BrowserRouter>{children}</BrowserRouter>
             </AuthLoader>
           </QueryClientProvider>

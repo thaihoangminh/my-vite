@@ -1,8 +1,6 @@
 import { Fragment, MutableRefObject, ReactNode } from 'react'
 import { Dialog as UIDialog, Transition } from '@headlessui/react'
 
-import 'intersection-observer'
-
 type DialogProps = {
   isOpen: boolean
   onClose: () => void

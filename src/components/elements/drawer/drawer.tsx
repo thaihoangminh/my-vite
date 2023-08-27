@@ -3,8 +3,6 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 
-import 'intersection-observer'
-
 const sizes = {
   sm: 'max-w-md',
   md: 'max-w-xl',
