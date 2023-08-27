@@ -4,16 +4,17 @@ import logo from '@/assets/react.svg'
 import { Button } from '@/components/elements'
 import { Head } from '@/components/head'
 import { useUser } from '@/lib/auth'
+import { routes } from '@/routes/routes'
 
 export const Landing = () => {
   const navigate = useNavigate()
-  const { data } = useUser()
+  const { user } = useUser()
 
   const handleStart = () => {
-    if (data) {
-      navigate('/app')
+    if (user) {
+      navigate(routes.app)
     } else {
-      navigate('/auth/login')
+      navigate(routes.login)
     }
   }
 

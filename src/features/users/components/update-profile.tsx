@@ -14,7 +14,7 @@ const schema = z.object({
 })
 
 export const UpdateProfile = () => {
-  const { data } = useUser()
+  const { user } = useUser()
   const updateProfileMutation = useUpdateProfile()
 
   return (
@@ -44,10 +44,10 @@ export const UpdateProfile = () => {
         }}
         options={{
           defaultValues: {
-            firstName: data?.firstName,
-            lastName: data?.lastName,
-            email: data?.email,
-            bio: data?.bio,
+            firstName: user?.firstName,
+            lastName: user?.lastName,
+            email: user?.email,
+            bio: user?.bio,
           },
         }}
         schema={schema}

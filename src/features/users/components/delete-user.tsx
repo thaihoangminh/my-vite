@@ -7,10 +7,10 @@ type DeleteUserProps = {
 }
 
 export const DeleteUser = ({ id }: DeleteUserProps) => {
-  const { data } = useUser()
+  const { user } = useUser()
   const deleteUserMutation = useDeleteUser()
 
-  if (data?.id === id) return null
+  if (user?.id === id) return null
 
   return (
     <ConfirmationDialog
