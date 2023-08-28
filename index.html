@@ -1,14 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <script>
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const isDarkTheme =
+        localStorage.theme === 'dark' || (!('theme' in localStorage) && prefersDarkMode)
+
+      if (isDarkTheme) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
-  <body class='dark:bg-gray-900 antialiased'>
+  <body class="antialiased dark:bg-gray-900">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script type="module" src="/theme.js"></script>
   </body>
 </html>
