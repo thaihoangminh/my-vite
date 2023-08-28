@@ -31,7 +31,6 @@
     "axios": "^1.4.0",
     "clsx": "^2.0.0",
     "dayjs": "^1.11.9",
-    "intersection-observer": "^0.12.2",
     "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
