@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { ArchiveBoxIcon } from '@heroicons/react/24/outline'
 
 type TableColumn<Entry> = {
@@ -48,7 +48,7 @@ export const Table = <Entry extends { id: string }>({ data, columns }: TableProp
                         key={`${title}${columnIndex}`}
                         className='whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900'
                       >
-                        {Cell ? <Cell entry={entry} /> : entry[field]}
+                        {Cell ? <Cell entry={entry} /> : (entry[field] as ReactNode)}
                       </td>
                     ))}
                   </tr>
