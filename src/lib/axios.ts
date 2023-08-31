@@ -21,12 +21,9 @@ axios.interceptors.request.use(onRequestSuccess)
 axios.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
-    const message =
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      (error.response?.data.error?.message as string) || error.message
-
+    // @ts-expect-error: unsafely accessing error object
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const message = (error.response?.data.error?.message as string) || error.message
     useNotificationStore.getState().addNotification({
       type: 'error',
       title: 'Error',

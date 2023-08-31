@@ -1,6 +1,7 @@
 import { ContentLayout } from '@/components/layout'
+import { USER_ROLES } from '@/features/auth'
 import { UsersList } from '@/features/users'
-import { Authorization, ROLES } from '@/lib/authorization'
+import { Authorization } from '@/lib/authorization'
 
 export const Users = () => {
   return (
@@ -8,7 +9,7 @@ export const Users = () => {
       <div className='mt-4'>
         <Authorization
           forbiddenFallback={<div>Only admin can view this.</div>}
-          allowedRoles={[ROLES.ADMIN]}
+          allowedRoles={[USER_ROLES.ADMIN]}
         >
           <UsersList />
         </Authorization>

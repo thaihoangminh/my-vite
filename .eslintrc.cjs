@@ -8,7 +8,8 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
@@ -21,7 +22,7 @@ module.exports = {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh', 'simple-import-sort', 'import', 'prettier'],
+  plugins: ['@typescript-eslint', 'react-refresh', 'simple-import-sort', 'import', 'prettier'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-non-null-assertion': 'off',
@@ -84,6 +85,9 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/prefer-ts-expect-error': 'error',
+    '@typescript-eslint/array-type': ['error', { default: 'generic' }],
 
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },

@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 
+import { UserRole } from '@/features/auth'
 import { useUser } from '@/lib/auth'
-import { RoleTypes } from '@/lib/authorization'
 
 export const useAuthorization = () => {
   const { user } = useUser()
@@ -13,7 +13,7 @@ export const useAuthorization = () => {
   const { role } = user
 
   const checkAccess = useCallback(
-    ({ allowedRoles }: { allowedRoles: RoleTypes[] }) => {
+    ({ allowedRoles }: { allowedRoles: Array<UserRole> }) => {
       if (allowedRoles && allowedRoles.length > 0) {
         return allowedRoles?.includes(role)
       }

@@ -56,24 +56,24 @@ export const UpdateProfile = () => {
           <>
             <InputField
               label='First Name'
-              error={formState.errors['firstName']}
+              error={formState.errors.firstName}
               registration={register('firstName')}
             />
             <InputField
               label='Last Name'
-              error={formState.errors['lastName']}
+              error={formState.errors.lastName}
               registration={register('lastName')}
             />
             <InputField
               label='Email Address'
               type='email'
-              error={formState.errors['email']}
+              error={formState.errors.email}
               registration={register('email')}
             />
 
             <TextAreaField
               label='Bio'
-              error={formState.errors['bio']}
+              error={formState.errors.bio}
               registration={register('bio')}
             />
           </>

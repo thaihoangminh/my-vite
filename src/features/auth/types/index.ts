@@ -1,4 +1,6 @@
-import { ROLES } from '@/lib/authorization'
+import { USER_ROLES } from '@/features/auth'
+
+export type UserRole = keyof typeof USER_ROLES
 
 export type GetUserResponse = {
   bio: string
@@ -7,7 +9,7 @@ export type GetUserResponse = {
   id: string
   lastName: string
   role: {
-    name: ROLES
+    name: UserRole
   }
   teamId: string
 }
@@ -18,7 +20,7 @@ export type AuthUser = {
   firstName: string
   id: string
   lastName: string
-  role: ROLES
+  role: UserRole
 }
 
 export type UserResponse = {

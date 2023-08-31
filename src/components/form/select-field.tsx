@@ -6,11 +6,11 @@ import { FieldWrapper, FieldWrapperPassThroughProps } from './field-wrapper'
 
 type Option = {
   label: ReactNode
-  value: string | number | string[]
+  value: string | number | Array<string>
 }
 
 type SelectFieldProps = FieldWrapperPassThroughProps & {
-  options: Option[]
+  options: Array<Option>
   className?: string
   defaultValue?: string
   placeholder?: string

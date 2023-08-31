@@ -22,7 +22,7 @@ export const useDeleteUser = () => {
     onMutate: async (deletedUser) => {
       await queryClient.cancelQueries(['users'])
 
-      const previousUsers = queryClient.getQueryData<User[]>(['users'])
+      const previousUsers = queryClient.getQueryData<Array<User>>(['users'])
 
       queryClient.setQueryData(
         ['users'],
