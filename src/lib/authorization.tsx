@@ -1,20 +1,14 @@
 import { ReactNode } from 'react'
 
+import { UserRole } from '@/features/auth'
 import { useAuthorization } from '@/hooks/use-authorization'
-
-export enum ROLES {
-  ADMIN = 'ADMIN',
-  USER = 'USER',
-}
-
-export type RoleTypes = keyof typeof ROLES
 
 type AuthorizationProps = {
   forbiddenFallback?: ReactNode
   children: ReactNode
 } & (
   | {
-      allowedRoles: RoleTypes[]
+      allowedRoles: Array<UserRole>
       policyCheck?: never
     }
   | {

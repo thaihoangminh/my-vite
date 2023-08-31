@@ -19,9 +19,9 @@ import {
 import clsx from 'clsx'
 
 import logo from '@/assets/react.svg'
+import { USER_ROLES } from '@/features/auth'
 import { useAuthorization } from '@/hooks/use-authorization'
 import { useLogout } from '@/lib/auth'
-import { ROLES } from '@/lib/authorization'
 
 type SideNavigationItem = {
   name: string
@@ -33,12 +33,12 @@ const SideNavigation = () => {
   const { checkAccess } = useAuthorization()
   const navigation = [
     { name: 'Dashboard', to: '.', icon: HomeIcon },
-    checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
+    checkAccess({ allowedRoles: [USER_ROLES.ADMIN] }) && {
       name: 'Users',
       to: './users',
       icon: UsersIcon,
     },
-  ].filter(Boolean) as SideNavigationItem[]
+  ].filter(Boolean) as Array<SideNavigationItem>
 
   return (
     <>
@@ -87,7 +87,7 @@ const UserNavigation = () => {
         logout.mutate()
       },
     },
-  ].filter(Boolean) as UserNavigationItem[]
+  ].filter(Boolean) as Array<UserNavigationItem>
 
   return (
     <Menu as='div' className='relative ml-3'>

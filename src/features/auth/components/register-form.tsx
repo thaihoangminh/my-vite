@@ -62,25 +62,25 @@ export const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
             <InputField
               type='text'
               label='First Name'
-              error={formState.errors['firstName']}
+              error={formState.errors.firstName}
               registration={register('firstName')}
             />
             <InputField
               type='text'
               label='Last Name'
-              error={formState.errors['lastName']}
+              error={formState.errors.lastName}
               registration={register('lastName')}
             />
             <InputField
               type='email'
               label='Email Address'
-              error={formState.errors['email']}
+              error={formState.errors.email}
               registration={register('email')}
             />
             <InputField
               type='password'
               label='Password'
-              error={formState.errors['password']}
+              error={formState.errors.password}
               registration={register('password')}
             />
 
@@ -106,7 +106,7 @@ export const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
             {chooseTeam && teamsQuery?.data ? (
               <SelectField
                 label='Team'
-                error={formState.errors['teamId']}
+                error={formState.errors.teamId}
                 registration={register('teamId')}
                 options={teamsQuery.data.map((team) => ({
                   label: team.name,
@@ -117,7 +117,7 @@ export const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
               <InputField
                 type='text'
                 label='Team Name'
-                error={formState.errors['teamName']}
+                error={formState.errors.teamName}
                 registration={register('teamName')}
               />
             )}

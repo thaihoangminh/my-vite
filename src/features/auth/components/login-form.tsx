@@ -34,13 +34,13 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
             <InputField
               type='text'
               label='Username'
-              error={formState.errors['identifier']}
+              error={formState.errors.identifier}
               registration={register('identifier')}
             />
             <InputField
               type='password'
               label='Password'
-              error={formState.errors['password']}
+              error={formState.errors.password}
               registration={register('password')}
             />
             <div>

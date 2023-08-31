@@ -5,7 +5,7 @@ import { axios } from '@/lib/axios'
 import { Team } from '../types'
 
 type GetTeamsResponse = {
-  roles: Team[]
+  roles: Array<Team>
 }
 
 type UseTeamsOptions = {

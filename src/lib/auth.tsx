@@ -94,7 +94,7 @@ export const provideAuth = <UserData, LoginCredentials, RegisterCredentials>({
   }
 
   const useLogin = (options?: TUserLoginOptions<UserData, LoginCredentials>) => {
-    const { onSuccess, ...mutateOptions } = options || {}
+    const { onSuccess, ...mutateOptions } = options ?? {}
     const queryClient = useQueryClient()
 
     return useMutation({
@@ -102,13 +102,13 @@ export const provideAuth = <UserData, LoginCredentials, RegisterCredentials>({
       ...mutateOptions,
       onSuccess: (user, variables, context) => {
         queryClient.setQueryData(userKey, user)
-        onSuccess && onSuccess(user, variables, context)
+        onSuccess?.(user, variables, context)
       },
     })
   }
 
   const useRegister = (options?: TUserRegisterOptions<UserData, RegisterCredentials>) => {
-    const { onSuccess, ...mutateOptions } = options || {}
+    const { onSuccess, ...mutateOptions } = options ?? {}
     const queryClient = useQueryClient()
 
     return useMutation({
@@ -116,13 +116,13 @@ export const provideAuth = <UserData, LoginCredentials, RegisterCredentials>({
       ...mutateOptions,
       onSuccess: (user, variables, context) => {
         queryClient.setQueryData(userKey, user)
-        onSuccess && onSuccess(user, variables, context)
+        onSuccess?.(user, variables, context)
       },
     })
   }
 
   const useLogout = (options?: TUserLogoutOptions) => {
-    const { onSuccess, ...mutateOptions } = options || {}
+    const { onSuccess, ...mutateOptions } = options ?? {}
     const queryClient = useQueryClient()
 
     return useMutation({
@@ -130,7 +130,7 @@ export const provideAuth = <UserData, LoginCredentials, RegisterCredentials>({
       ...mutateOptions,
       onSuccess: (...args) => {
         queryClient.setQueryData(userKey, null)
-        onSuccess && onSuccess(...args)
+        onSuccess?.(...args)
       },
     })
   }

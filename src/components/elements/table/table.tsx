@@ -8,8 +8,8 @@ type TableColumn<Entry> = {
 }
 
 export type TableProps<Entry> = {
-  data: Entry[]
-  columns: TableColumn<Entry>[]
+  data: Array<Entry>
+  columns: Array<TableColumn<Entry>>
 }
 
 export const Table = <Entry extends { id: string }>({ data, columns }: TableProps<Entry>) => {

@@ -9,7 +9,7 @@ export type Notification = {
 }
 
 type NotificationsStore = {
-  notifications: Notification[]
+  notifications: Array<Notification>
   addNotification: (notification: Omit<Notification, 'id'>) => void
   dismissNotification: (id: string) => void
 }

@@ -1,6 +1,6 @@
 import { ContentLayout } from '@/components/layout'
+import { USER_ROLES } from '@/features/auth'
 import { useUser } from '@/lib/auth'
-import { ROLES } from '@/lib/authorization'
 
 export const Dashboard = () => {
   const { user } = useUser()
@@ -17,13 +17,13 @@ export const Dashboard = () => {
         Your role is: <b>{user?.role}</b>
       </h4>
       <p className='font-medium'>In this application you can:</p>
-      {user?.role === ROLES.USER && (
+      {user?.role === USER_ROLES.USER && (
         <ul className='my-4 list-inside list-disc'>
           <li>Create comments in discussions</li>
           <li>Delete own comments</li>
         </ul>
       )}
-      {user?.role === ROLES.ADMIN && (
+      {user?.role === USER_ROLES.ADMIN && (
         <ul className='my-4 list-inside list-disc'>
           <li>Create discussions</li>
           <li>Edit discussions</li>
